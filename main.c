@@ -16,6 +16,19 @@ int main(void){
 	if(guess <= 100 && guess >= 0)
 	{
 		printf("You guessed: %d\n", guess);
+
+		guessing = 1;
+
+		while(guessing){
+		
+			if(guess == rand_value){
+				printf"You guessed right!!!\n";
+				guessing = 0;
+				break;
+				}
+			if(guess > rand_value{
+
+
 	}
 
 	
