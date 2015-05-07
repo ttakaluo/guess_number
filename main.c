@@ -2,38 +2,53 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main(void){
+int genNumber(void){
 
 	srand(time(0));
-
 	int rand_value = rand()%101;
-	printf("%d\n", rand_value);
-	
-	printf("Guess a number: \n");
+	return rand_value;
+}
+
+int askNumber(void){
+
 	int guess;
-
-	scanf("%d", &guess);
-	if(guess <= 100 && guess >= 0)
-	{
-		printf("You guessed: %d\n", guess);
-
-		guessing = 1;
-
-		while(guessing){
+	do{
+		printf("Guess a number [0-100]: \n");
+		scanf("%d", &guess);
 		
-			if(guess == rand_value){
-				printf"You guessed right!!!\n";
-				guessing = 0;
-				break;
-				}
-			if(guess > rand_value{
+	}
+	while(guess < 0 || guess > 100);
 
+	printf("Guess was: %d\n", guess);
+	return guess;
+}
 
+int guessNumber(const int randomNumber){
+
+	int guess = askNumber();
+
+	if(guess==randomNumber){
+	printf("You guessed right!!\n");
+	return 0;
+	}
+	if(guess>randomNumber){
+		printf("You guessed too high!\n");
+	return 1;
+	}
+	if(guess<randomNumber){
+		printf("You guessed too low!\n");
+	return 1;
 	}
 
-	
+	printf("Something failed badly!!\n");
+	return 0;
+}
 
+int main(void){
 
+	int randomNumber=genNumber();
+
+	while(guessNumber(randomNumber)){;}
 
 	return 0;
 }

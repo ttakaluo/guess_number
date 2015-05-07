@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS= -Wall -I.
-EXE_NAME = Env
+EXE_NAME = guess_number
 FILES = main.o
 all: $(FILES)
 	$(CC) -o $(EXE_NAME) $(FILES) $(CFLAGS)
