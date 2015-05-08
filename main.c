@@ -9,12 +9,19 @@ int genNumber(void){
 	return rand_value;
 }
 
+int clean_stdin(){
+
+	while (getchar()!='\n');
+	return 1;
+}
+
 int askNumber(void){
 
 	int guess;
 	do{
 		printf("Guess a number [0-100]: \n");
 		scanf("%d", &guess);
+		clean_stdin();
 		
 	}
 	while(guess < 0 || guess > 100);
